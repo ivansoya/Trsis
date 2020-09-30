@@ -1,1 +1,1 @@
-# Trsis_lana2
+# Trsis_laba2
