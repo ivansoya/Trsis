@@ -1,0 +1,58 @@
+CREATE DATABASE  IF NOT EXISTS `mydb` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `mydb`;
+-- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: mydb
+-- ------------------------------------------------------
+-- Server version	8.0.21
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `car`
+--
+
+DROP TABLE IF EXISTS `car`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `car` (
+  `CAR_ID` int NOT NULL,
+  `CAR_COMPANY` varchar(255) DEFAULT NULL,
+  `CAR_MODEL` varchar(255) DEFAULT NULL,
+  `CAR_PRICE` int DEFAULT NULL,
+  `CAR_SHOP_ID` int DEFAULT NULL,
+  PRIMARY KEY (`CAR_ID`),
+  UNIQUE KEY `UK_2cnsgwvi426vv0c3ljtde7d11` (`CAR_MODEL`),
+  KEY `FK9veydbn1qy8f7q5pfkqn3103g` (`CAR_SHOP_ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `car`
+--
+
+LOCK TABLES `car` WRITE;
+/*!40000 ALTER TABLE `car` DISABLE KEYS */;
+INSERT INTO `car` VALUES (11,'Lada','Kalina II',320000,2),(10,'Dodge','Charger VI (LD)',2600000,3),(9,'Chevrolet','Corvette C7 Z06',5600000,3),(2,'Mercedez','W203',600000,1),(3,'Mercedez','Long VI (W222, C217) Рестайлинг 350 d Long',5400000,1),(4,'Mercedez','Long VI (W222, C217) 500 Long',3500000,1),(5,'Audi','TT III (8S)',2000000,2),(6,'Audi','A4 (B6)',20000,2),(7,'Audi','e-tron I 55',5000000,3),(8,'Audi','Q7 I (4L) Рестайлинг',1200000,3),(1,'company','model',10000,2);
+/*!40000 ALTER TABLE `car` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2020-09-30  4:11:35

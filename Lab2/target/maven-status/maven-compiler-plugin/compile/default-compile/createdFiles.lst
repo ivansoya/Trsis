@@ -1,0 +1,17 @@
+com\soya\trsis\carselling\services\ShopServiceImpl.class
+com\soya\trsis\carselling\services\CustomerService.class
+com\soya\trsis\carselling\db\dao\ShopRepository.class
+com\soya\trsis\carselling\db\model\Shop.class
+com\soya\trsis\carselling\services\CarService.class
+com\soya\trsis\carselling\services\ShopService.class
+com\soya\trsis\carselling\Application.class
+com\soya\trsis\carselling\services\CarServiceImpl.class
+com\soya\trsis\carselling\rest\CarRestService.class
+com\soya\trsis\carselling\services\CustomerServiceImpl.class
+com\soya\trsis\carselling\db\dao\CustomerRepository.class
+com\soya\trsis\carselling\db\model\Customer.class
+com\soya\trsis\carselling\db\dao\CarRepository.class
+com\soya\trsis\carselling\rest\CustomerRestService.class
+com\soya\trsis\carselling\db\model\Car.class
+com\soya\trsis\carselling\rest\ShopRestService.class
+com\soya\trsis\carselling\config\Security.class
