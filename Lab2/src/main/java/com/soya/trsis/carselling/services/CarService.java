@@ -9,7 +9,7 @@ public interface CarService {
     
     Iterable<Car> listAll();
 
-    void deleteById(Integer id);
+    void delete(Car car);
     
     Car add(Integer id, String model, Integer price, String company, Integer shop);
     

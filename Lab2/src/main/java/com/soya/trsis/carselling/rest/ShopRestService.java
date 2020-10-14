@@ -24,18 +24,18 @@ public class ShopRestService {
         return ResponseEntity.ok(shopService.listAll());
     }
 
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public void deleteById(@PathVariable("id") Integer id) {
         shopService.deleteById(id);
     }
 
-    @RequestMapping(value = "/{name}/{town}/{adress}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{name}/{town}/{adress}", method = RequestMethod.POST)
     public ResponseEntity<Object> add(@PathVariable("name") String name, @PathVariable("town") String town, 
                                       @PathVariable("adress") String adress){
         return ResponseEntity.ok(shopService.add(name, town, adress));
     }
     
-    @RequestMapping(value = "/find/{name}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{name}", method = RequestMethod.POST)
     public ResponseEntity<Object> findByShop(@PathVariable("name") String name) {
         return ResponseEntity.ok(shopService.findByName(name));
     }

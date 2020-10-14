@@ -1,0 +1,29 @@
+.sample-indent {
+    margin-left: 10px;
+}
+
+.sample-form {
+    width: 200px;
+    padding:10px;
+    border: 2px solid #eee;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:10px;
+}
+
+.styletest {
+    margin-top: 20px;
+    color: black; 
+    font-size: 18px; 
+    font-family: Helvetica;
+}
+
+.text-box {
+  margin-top: 20px;
+  width:100%;
+  resize: vertical;
+  padding:15px;
+  border-radius:15px;
+  border:0;
+  box-shadow:4px 4px 10px rgba(0,0,0,0.06);
+  height:200px;
+}

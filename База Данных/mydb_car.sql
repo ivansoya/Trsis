@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `mydb` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `mydb`;
 -- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: mydb
@@ -31,9 +29,10 @@ CREATE TABLE `car` (
   `CAR_PRICE` int DEFAULT NULL,
   `CAR_SHOP_ID` int DEFAULT NULL,
   PRIMARY KEY (`CAR_ID`),
-  UNIQUE KEY `UK_2cnsgwvi426vv0c3ljtde7d11` (`CAR_MODEL`),
-  KEY `FK9veydbn1qy8f7q5pfkqn3103g` (`CAR_SHOP_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  KEY `FK9veydbn1qy8f7q5pfkqn3103g` (`CAR_SHOP_ID`),
+  CONSTRAINT `CAR_SHOP_ID` FOREIGN KEY (`CAR_SHOP_ID`) REFERENCES `shop` (`SHOP_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK9veydbn1qy8f7q5pfkqn3103g` FOREIGN KEY (`CAR_SHOP_ID`) REFERENCES `shop` (`SHOP_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +41,7 @@ CREATE TABLE `car` (
 
 LOCK TABLES `car` WRITE;
 /*!40000 ALTER TABLE `car` DISABLE KEYS */;
-INSERT INTO `car` VALUES (11,'Lada','Kalina II',320000,2),(10,'Dodge','Charger VI (LD)',2600000,3),(9,'Chevrolet','Corvette C7 Z06',5600000,3),(2,'Mercedez','W203',600000,1),(3,'Mercedez','Long VI (W222, C217) Рестайлинг 350 d Long',5400000,1),(4,'Mercedez','Long VI (W222, C217) 500 Long',3500000,1),(5,'Audi','TT III (8S)',2000000,2),(6,'Audi','A4 (B6)',20000,2),(7,'Audi','e-tron I 55',5000000,3),(8,'Audi','Q7 I (4L) Рестайлинг',1200000,3),(1,'company','model',10000,2);
+INSERT INTO `car` VALUES (2,'Mercedez','W203',600000,1),(3,'Mercedez','Long VI (W222, C217) Рестайлинг 350 d Long',5400000,1),(4,'Mercedez','Long VI (W222, C217) 500 Long',3500000,1),(5,'Audi','TT III (8S)',2000000,2),(6,'Audi','A4 (B6)',20000,2),(7,'Audi','e-tron I 55',5000000,3),(8,'Audi','Q7 I (4L) Рестайлинг',1200000,3),(9,'Chevrolet','Corvette C7 Z06',5600000,3),(10,'123123','Kalina II',123123,3);
 /*!40000 ALTER TABLE `car` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-09-30  4:11:35
+-- Dump completed on 2020-10-14  2:58:55

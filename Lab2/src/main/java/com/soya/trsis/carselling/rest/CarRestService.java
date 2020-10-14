@@ -5,8 +5,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.soya.trsis.carselling.services.CarService;
+import com.soya.trsis.carselling.db.model.Car;
 /**
  *
  * @author manno
@@ -23,19 +26,20 @@ public class CarRestService {
         return ResponseEntity.ok(carService.listAll());
     }
 
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-    public void deleteById(@PathVariable("id") Integer id) {
-        carService.deleteById(id);
+    @RequestMapping(value = "", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void delete(@RequestBody Car car) {
+        carService.delete(car);
     }
 
-    @RequestMapping(value = "/{id}/{model}/{price}/{company}/{shop}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}/{model}/{shop}/{price}/{company}", method = RequestMethod.POST)
     public ResponseEntity<Object> add(@PathVariable("id") Integer id, @PathVariable("model") String model, 
                                       @PathVariable("price") Integer price, @PathVariable("company") String company,
                                       @PathVariable("shop") Integer shop) {
         return ResponseEntity.ok(carService.add(id, model, price, company, shop));
     }
     
-    @RequestMapping(value = "/find/{shop}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{shop}", method = RequestMethod.POST)
     public ResponseEntity<Object> findByShop(@PathVariable("shop") Integer shop) {
         return ResponseEntity.ok(carService.findByShop(shop));
     }

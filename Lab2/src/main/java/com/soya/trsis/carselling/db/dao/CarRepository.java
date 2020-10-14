@@ -11,6 +11,4 @@ public interface CarRepository extends CrudRepository<Car, Integer> {
 
     public Iterable<Car> findByShop(Integer shop);
 
-    public void deleteById(Integer id);
-
 }

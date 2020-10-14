@@ -12,3 +12,10 @@ insert into CAR (CAR_ID, CAR_COMPANY, CAR_MODEL, CAR_PRICE, CAR_SHOP_ID) values 
 insert into CAR (CAR_ID, CAR_COMPANY, CAR_MODEL, CAR_PRICE, CAR_SHOP_ID) values (9, 'Chevrolet', 'Corvette C7 Z06', 5600000, 3);
 insert into CAR (CAR_ID, CAR_COMPANY, CAR_MODEL, CAR_PRICE, CAR_SHOP_ID) values (10, 'Dodge', 'Charger VI (LD)', 2600000, 3);
 insert into CAR (CAR_ID, CAR_COMPANY, CAR_MODEL, CAR_PRICE, CAR_SHOP_ID) values (11, 'Lada', 'Kalina II', 320000, 2);
+insert into CUSTOMER (CUSTOMER_NAME, CUSTOMER_POSITION, CUSTOMER_SALARY, CUSTOMER_SHOP_ID) values ('Игорь', 'Младший сотрудник', 40000, 1);
+insert into CUSTOMER (CUSTOMER_NAME, CUSTOMER_POSITION, CUSTOMER_SALARY, CUSTOMER_SHOP_ID) values ('Катя', 'Младший сотрудник', 40000, 1);
+insert into CUSTOMER (CUSTOMER_NAME, CUSTOMER_POSITION, CUSTOMER_SALARY, CUSTOMER_SHOP_ID) values ('Валентин', 'Старший сотрудник', 80000, 1);
+insert into CUSTOMER (CUSTOMER_NAME, CUSTOMER_POSITION, CUSTOMER_SALARY, CUSTOMER_SHOP_ID) values ('Черт', 'Начальник', 160000, 1);
+insert into CUSTOMER (CUSTOMER_NAME, CUSTOMER_POSITION, CUSTOMER_SALARY, CUSTOMER_SHOP_ID) values ('Сергей', 'Младший сотрудник', 25000, 2);
+insert into CUSTOMER (CUSTOMER_NAME, CUSTOMER_POSITION, CUSTOMER_SALARY, CUSTOMER_SHOP_ID) values ('Марина', 'Младший сотрудник', 40000, 2);
+insert into CUSTOMER (CUSTOMER_NAME, CUSTOMER_POSITION, CUSTOMER_SALARY, CUSTOMER_SHOP_ID) values ('Черт еще хуже', 'Начальник', 320000, 2);
