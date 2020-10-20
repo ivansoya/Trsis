@@ -16,33 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `car`
+-- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `car`;
+DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `car` (
-  `CAR_ID` int NOT NULL,
-  `CAR_COMPANY` varchar(255) DEFAULT NULL,
-  `CAR_MODEL` varchar(255) DEFAULT NULL,
-  `CAR_PRICE` int DEFAULT NULL,
-  `CAR_SHOP_ID` int DEFAULT NULL,
-  PRIMARY KEY (`CAR_ID`),
-  KEY `FK9veydbn1qy8f7q5pfkqn3103g` (`CAR_SHOP_ID`),
-  CONSTRAINT `CAR_SHOP_ID` FOREIGN KEY (`CAR_SHOP_ID`) REFERENCES `shop` (`SHOP_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK9veydbn1qy8f7q5pfkqn3103g` FOREIGN KEY (`CAR_SHOP_ID`) REFERENCES `shop` (`SHOP_ID`)
+CREATE TABLE `user` (
+  `USER_ID` int NOT NULL DEFAULT '1',
+  `USER_LOGIN` varchar(45) NOT NULL,
+  `USER_HASH` varchar(100) NOT NULL,
+  PRIMARY KEY (`USER_ID`),
+  UNIQUE KEY `USER_ID_UNIQUE` (`USER_ID`),
+  UNIQUE KEY `USER_LOGIN_UNIQUE` (`USER_LOGIN`),
+  UNIQUE KEY `USER_HASH_UNIQUE` (`USER_HASH`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `car`
+-- Dumping data for table `user`
 --
 
-LOCK TABLES `car` WRITE;
-/*!40000 ALTER TABLE `car` DISABLE KEYS */;
-INSERT INTO `car` VALUES (2,'Mercedez','W203',600000,1),(3,'Mercedez','Long VI (W222, C217) Рестайлинг 350 d Long',5400000,1),(4,'Mercedez','Long VI (W222, C217) 500 Long',3500000,1),(5,'Audi','TT III (8S)',2000000,2),(6,'Audi','A4 (B6)',20000,2),(7,'Audi','e-tron I 55',5000000,3),(8,'Audi','Q7 I (4L) Рестайлинг',1200000,3),(9,'Chevrolet','Corvette C7 Z06',5600000,3),(10,'123123','Kalina II',123123,3);
-/*!40000 ALTER TABLE `car` ENABLE KEYS */;
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'admin','$2a$10$BoRqsTLCN3gdN2dIXDkM8.KWV7b2Yw9F8E3sSwh.l6kqsc6BC.kre'),(2,'anotherLogin','$2a$10$hGHG1fMoMZhzzFp470tOQe.dAn20lSbvK5JDsUnef0J8KoHfCPsm6'),(3,'liliput','$2a$10$EyIs2WcR9TmGnJgLkr7kouKVCbAbMJ95/xXhBiAoN2NHGXIPTlz8q'),(4,'lupa','$2a$10$oUzCKPJKtUV7oAdt6CKTDOgAJwolg63vR/YfXQ.OPaYluhAPVXRzu'),(5,'pupa','$2a$10$NWZmyFgyA7F3DsTWPur80eK9A93f7gaeFiOTL8fiJ3TkU54Yph3xq');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
