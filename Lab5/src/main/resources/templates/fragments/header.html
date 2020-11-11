@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="header">
+  <a class="navbar-brand" th:text="#{cars.cars}">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/" th:text="#{cars.home}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a th:if="${#authorization.expression('!isAuthenticated()')}" class="nav-link disabled" tabindex="-1" aria-disabled="true" th:text="#{login.out}">Logged out</a>
+        <a th:if="${#authorization.expression('isAuthenticated()')}" class="nav-link disabled" tabindex="-1" aria-disabled="true" th:text="#{login.in}">logged in</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <a th:if="${#authorization.expression('!isAuthenticated()')}" class="btn btn-outline-success my-2 my-sm-0" type="submit" href="/login" th:href="@{/login}" th:text="#{login.welcome}">Search</a>
+      <a th:if="${#authorization.expression('isAuthenticated()')}" class="btn btn-outline-success my-2 my-sm-0" type="submit" href="/logout" th:href="@{/logout}" th:text="#{login.goodbye}">Search</a>
+    </form>
+  </div>
+</nav>
