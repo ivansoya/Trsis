@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+    <head>
+        <title>Log in</title>
+   
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> </link>   
+
+    </head>
+    <body>
+        <div>           
+            <h2>Log in</h2>
+            <form th:action="@{/login}" method="post">
+                <p th:if="${param.error}">Unknown username or invalid password.</p>
+                <p th:if="${param.logout}">You have been logouted.</p>
+                
+                <p><input type="text" class="form-control" name="login" placeholder="Login"/></p>
+                <p><input type="password" class="form-control" name="pass" placeholder="Password"/></p>
+                <p><input type="submit" class="btn btn-primary" value="Log in"/></p>
+            </form>
+            <label><a href="/">To home page</a></label>
+        </div>   
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"> </script>
+        
+    </body>
+</html>
